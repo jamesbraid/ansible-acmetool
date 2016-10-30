@@ -1,6 +1,7 @@
 ---
 - name: "get account-thumbprint with acmetool"
   command: "acmetool account-thumbprint"
+  always_run: yes
   register: cmdoutput
 
 - set_fact:
