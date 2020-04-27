@@ -4,7 +4,7 @@
   register: cmdoutput
 
 - set_fact:
-    thumbprint: "{{ cmdoutput.stdout.split()[0] }}"
+    thumbprint: "{{ cmdoutput.stdout.split()[-2] }}"
 - name: "Create nginx folder"
   file:
     path: "/etc/nginx"
