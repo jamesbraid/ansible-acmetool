@@ -69,12 +69,12 @@
 
 
 - name: "apache specific config tasks"
-  include: "apache-proxy.yml"
+  include_tasks: "apache-proxy.yml"
   when: acmetool_websrv == "apache"
   tags: acmetool-websrv
 
 - name: "nginx specific config tasks"
-  include: "nginx-stateless.yml"
+  include_tasks: "nginx-stateless.yml"
   when: acmetool_websrv == "nginx"
   tags: acmetool-websrv
 
@@ -85,7 +85,7 @@
   when: acmetool_want is defined
 
 - name: "nginx specific config tasks after getting certs"
-  include: "nginx-stateless-disable-temp-site.yml"
+  include_tasks: "nginx-stateless-disable-temp-site.yml"
   tags: acmetool-websrv
   when:
    - acmetool_want is defined
